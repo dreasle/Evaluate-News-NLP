@@ -21,3 +21,14 @@
 - [ ] Be able to show content offline
 
 All of these requirements are explained throughout the course. Specifics on setting up the Aylien API are found in the README file of this repo.
+
+
+### Additional requirements:
+
+- [ ] Parse the response body to dynamically fill content on the page.
+
+- [ ] Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.  You should add Jest to your project to handle testing as well.
+
+- [ ] Go back to the web pack config and add the setup for service workers.
+
+- [ ] Test that the site is now available even when you stop your local server
