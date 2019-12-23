@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-var port = 7000
+var port = 8081
 app.listen(port, function () {
     console.log(`Example app listening on port ${port}!`)
 })
