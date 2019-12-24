@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/styles/header.css">
         <link rel="stylesheet" href="/styles/form.css">
         <link rel="stylesheet" href="/styles/footer.css"> -->
+        <!-- <link rel="stylesheet" href="main.css"> -->
     </head>
 
     <body>
@@ -39,5 +40,14 @@
             <p>This is a footer</p>
         </footer>
         <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>
