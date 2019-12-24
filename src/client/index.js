@@ -9,7 +9,7 @@ import './styles/header.scss'
 
 console.log(checkForName);
 
-alert("I EXIST")
+// alert("I EXIST")
 
 
 export {
@@ -17,4 +17,4 @@ export {
     handleSubmit
 }
 
-console.log("CHANGE!!");
+// console.log("CHANGE!!");
