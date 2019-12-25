@@ -25,7 +25,8 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <!-- <input id="url" type="text" name="input" value="" onblur="onBlur()" placeholder="Enter url to be processed"> -->
+                    <input id="url" type="text" name="input" value="" placeholder="Enter url to be processed">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
@@ -40,7 +41,7 @@
             <p>This is a footer</p>
         </footer>
         <!-- <script type="text/javascript" src="../../../dist/main.js"></script> -->
-        <script>
+        <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -48,6 +49,6 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-        </script>
+        </script> -->
     </body>
 </html>

@@ -1,16 +1,27 @@
 const dotenv = require('dotenv')
 dotenv.config()
 
-var path = require('path')
+// Express to run server and routes
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+
+// const mockAPIResponse = require('./mockAPI.js')
 var aylien = require("aylien_textapi")
 
+// Start up app instance
 const app = express()
 
 app.use(express.static('dist'))
 
 console.log(__dirname)
+
+// Set up body-parser
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+// Set up cors
+const cors = require('cors');
+app.use(cors());
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -19,12 +30,12 @@ app.get('/', function (req, res) {
 // designates what port the app will listen to for incoming requests
 var port = 8081
 app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`)
+    console.log(`Running on port ${port}!`)
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+// app.get('/test', function (req, res) {
+//     res.send(mockAPIResponse)
+// })
 
 // set aylien API credentials
 var textapi = new aylien({
@@ -32,10 +43,14 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
     })
 
-// Send Aylien response
+// Temp variable to hold url for processing
+var inputUrl = 'http://www.un-fancy.com/outfits-fall/3-cozy-comfortable-outfits-for-family-gatherings/'
+// var inputUrl = ''
+
+// GET routes
 app.get('/aylien', function (req, res) {
     textapi.sentiment({
-        'text': 'John is a very good football player!'
+        'url': inputUrl
         }, function(error, response) {
             if (error === null) {
                 console.log(response)
@@ -44,3 +59,12 @@ app.get('/aylien', function (req, res) {
     })
 })
 
+
+// POST route
+// app.post('/udpate', updateUrl)
+
+// function updateUrl (req, res) {
+//     console.log(`in updateUrl: $(res)`)
+//     inputUrl = res
+//     res.end()
+// }
