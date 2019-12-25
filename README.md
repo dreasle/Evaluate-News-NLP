@@ -77,3 +77,5 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 - [ ] A single field form that uses the correct html tags and structure. There should be some attempt to validate the form input. Bonus points if you use regex to correctly check for a URL and give back helpful error messages.
 
+- [ ] Set up env variables for ports in package.json call and webpack
+

@@ -6,8 +6,8 @@ function handleSubmit(event) {
     console.log(`Input URL: ${inputUrl}`)
     // Client.checkForName(inputUrl)
 
-    // Async POST request to update Url on server
-    const updateData = async ( url = '', data = {})=>{
+    // Async POST request to get sentiment 
+    const getSentiment = async ( url = '', data = {})=>{
         try {
             const response = await fetch(url, {
                 method: 'POST', 
@@ -16,25 +16,19 @@ function handleSubmit(event) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
-                // body: data
-            });
+            })
+            .then(res => res.json())
+            .then(function(res) {
+                document.getElementById('results').innerHTML = `Polarity: ${res.polarity}<br> Subjectivity: ${res.subjectivity}<br>Text: ${res.text}`
+            })
         } catch(error) {
             console.log("error", error);
         }
     }
 
-    // Post URL on server
-    console.log("About to call updateData")
-    updateData('/update', {'u': inputUrl});
-    console.log("After calling updateData")
-
-    // fetch('http://localhost:8081/aylien')
-    fetch('/aylien')
-    .then(res => res.json())
-    .then(function(res) {
-
-        document.getElementById('results').innerHTML = `Polarity: ${res.polarity}<br> Subjectivity: ${res.subjectivity}<br>Text: ${res.text}`
-    })
+    // console.log("About to call getSentiment")
+    getSentiment('/sentiment', {'sentmturl': inputUrl});
+    // console.log("After calling getSentiment")
 }
 
 export { handleSubmit }

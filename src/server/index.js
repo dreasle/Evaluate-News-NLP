@@ -34,24 +34,16 @@ app.listen(port, function () {
     console.log(`Running on port ${port}!`)
 })
 
-// app.get('/test', function (req, res) {
-//     res.send(mockAPIResponse)
-// })
-
 // set aylien API credentials
 var textapi = new aylien({
     application_id: process.env.API_ID,
     application_key: process.env.API_KEY
     })
 
-// Temp variable to hold url for processing
-// var inputUrl = 'http://www.un-fancy.com/outfits-fall/3-cozy-comfortable-outfits-for-family-gatherings/'
-var inputUrl = ''
-
-// GET routes
-app.get('/aylien', function (req, res) {
+// POST route
+app.post('/sentiment', function (req, res) {
     textapi.sentiment({
-        'url': inputUrl
+        'url': req.body.sentmturl
         }, function(error, response) {
             if (error === null) {
                 console.log(response)
@@ -59,13 +51,3 @@ app.get('/aylien', function (req, res) {
             }
     })
 })
-
-
-// POST route
-app.post('/update', function (req, res) {
-    console.log(`in updateUrl: ${req.u}`)
-    inputUrl = req.body.u
-    res.json(req.body)
-    // res.end()
-})
-
