@@ -28,7 +28,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-var port = 8081
+// var port = 8081
+var port = 8080
 app.listen(port, function () {
     console.log(`Running on port ${port}!`)
 })
@@ -44,8 +45,8 @@ var textapi = new aylien({
     })
 
 // Temp variable to hold url for processing
-var inputUrl = 'http://www.un-fancy.com/outfits-fall/3-cozy-comfortable-outfits-for-family-gatherings/'
-// var inputUrl = ''
+// var inputUrl = 'http://www.un-fancy.com/outfits-fall/3-cozy-comfortable-outfits-for-family-gatherings/'
+var inputUrl = ''
 
 // GET routes
 app.get('/aylien', function (req, res) {
@@ -61,10 +62,10 @@ app.get('/aylien', function (req, res) {
 
 
 // POST route
-// app.post('/udpate', updateUrl)
+app.post('/update', function (req, res) {
+    console.log(`in updateUrl: ${req.u}`)
+    inputUrl = req.body.u
+    res.json(req.body)
+    // res.end()
+})
 
-// function updateUrl (req, res) {
-//     console.log(`in updateUrl: $(res)`)
-//     inputUrl = res
-//     res.end()
-// }
