@@ -1,18 +1,18 @@
+// Server javascript file
+
+// Load environment variables
 const dotenv = require('dotenv')
 dotenv.config()
 
 // Express to run server and routes
 const express = require('express')
 
-// const mockAPIResponse = require('./mockAPI.js')
+// Aylien natural language processing SDK
 var aylien = require("aylien_textapi")
 
-// Start up app instance
+// Init app instance
 const app = express()
-
 app.use(express.static('dist'))
-
-console.log(__dirname)
 
 // Set up body-parser
 var bodyParser = require('body-parser')
@@ -23,13 +23,14 @@ app.use(bodyParser.json())
 const cors = require('cors');
 app.use(cors());
 
+// Set up default index.html
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-// designates what port the app will listen to for incoming requests
-// var port = 8081
-var port = 8080
+// Spin up express server
+// var port = 8081 // This is for dev - USE ENV Vars!!
+var port = 8080 // This is for prod - USE ENV Vars!!
 app.listen(port, function () {
     console.log(`Running on port ${port}!`)
 })
@@ -40,14 +41,14 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
     })
 
-// POST route
+// POST route for sentiment call
 app.post('/sentiment', function (req, res) {
     textapi.sentiment({
         'url': req.body.sentmturl
         }, function(error, response) {
             if (error === null) {
-                console.log(response)
                 res.send(response)
             }
-    })
+            console.log(response)
+        })
 })

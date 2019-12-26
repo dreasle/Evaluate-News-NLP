@@ -30,7 +30,7 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 ### Aylien endpoints
 
-[here](https://docs.aylien.com/textapi/endpoints/#api-endpoints).
+[Endpoints doc](https://docs.aylien.com/textapi/endpoints/#api-endpoints).
 
 ## Aylien processing
 
@@ -47,19 +47,19 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 - [x] Have the developer environment set up with the Webpack dev server
 
-- [ ] Have a minimum of one form field
+- [x] Have a minimum of one form field
 
-- [ ] Make one request to the Aylien API
+- [x] Make one request to the Aylien API
 
 - [ ] Use Sass for styling
 
-- [ ] Minify js and styles in the production environment
+- [x] Minify js and styles in the production environment
 
-- [ ] Response from the API must be added to the view for a user to see 
+- [x] Response from the API must be added to the view for a user to see 
 
 - [x] Be able to show content offline
 
-- [ ] Parse the response body to dynamically fill content on the page.
+- [x] Parse the response body to dynamically fill content on the page.
 
 - [ ] Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.  You should add Jest to your project to handle testing as well.
 
@@ -67,15 +67,15 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 - [ ] Test that the site is now available even when you stop your local server
 
-- [ ] Readme file updated with non-default text
+- [x] Readme file updated with non-default text
 
-- [ ] the git ignore file must contain both the node_modules and dist folders at minimum. Other files can be included.
+- [x] the git ignore file must contain both the node_modules and dist folders at minimum. Other files can be included.
 
 - [ ] There will be a minimum of 2 javascript files in the src/js folder. All files in the js folder must be found by webpack.
 
 - [ ] Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/js file should have at least one test.
 
-- [ ] A single field form that uses the correct html tags and structure. There should be some attempt to validate the form input. Bonus points if you use regex to correctly check for a URL and give back helpful error messages.
+- [x] A single field form that uses the correct html tags and structure. There should be some attempt to validate the form input. Bonus points if you use regex to correctly check for a URL and give back helpful error messages.
 
 - [ ] Set up env variables for ports in package.json call and webpack
 
