@@ -51,7 +51,7 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 - [x] Make one request to the Aylien API
 
-- [ ] Use Sass for styling
+- [x] Use Sass for styling
 
 - [x] Minify js and styles in the production environment
 
@@ -61,21 +61,19 @@ The Aylien API is perhaps different than what you've used before. It has you ins
 
 - [x] Parse the response body to dynamically fill content on the page.
 
-- [ ] Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.  You should add Jest to your project to handle testing as well.
+- [x] Test that the server and form submission work, making sure to also handle error responses if the user input does not match API requirements.  You should add Jest to your project to handle testing as well.
 
-- [ ] Go back to the web pack config and add the setup for service workers.
+- [x] Go back to the web pack config and add the setup for service workers.
 
-- [ ] Test that the site is now available even when you stop your local server
+- [x] Test that the site is now available even when you stop your local server
 
 - [x] Readme file updated with non-default text
 
 - [x] the git ignore file must contain both the node_modules and dist folders at minimum. Other files can be included.
 
-- [ ] There will be a minimum of 2 javascript files in the src/js folder. All files in the js folder must be found by webpack.
+- [x] There will be a minimum of 2 javascript files in the src/js folder. All files in the js folder must be found by webpack.
 
-- [ ] Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/js file should have at least one test.
+- [x] Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/js file should have at least one test.
 
 - [x] A single field form that uses the correct html tags and structure. There should be some attempt to validate the form input. Bonus points if you use regex to correctly check for a URL and give back helpful error messages.
-
-- [ ] Set up env variables for ports in package.json call and webpack
 

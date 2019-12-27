@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
 })
 
 // Spin up express server
-// var port = 8081 // This is for dev - USE ENV Vars!!
-var port = 8080 // This is for prod - USE ENV Vars!!
+var port = 8081 // This is for dev - USE ENV Vars!!
+// var port = 8080 // This is for prod - USE ENV Vars!!
 app.listen(port, function () {
     console.log(`Running on port ${port}!`)
 })
@@ -41,8 +41,8 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
     })
 
-// POST route for sentiment call
-app.post('/sentiment', function (req, res) {
+// Make aylien call
+function callAylien(req, res) {
     textapi.sentiment({
         'url': req.body.sentmturl
         }, function(error, response) {
@@ -50,5 +50,12 @@ app.post('/sentiment', function (req, res) {
                 res.send(response)
             }
             console.log(response)
-        })
+    })
+    // console.log('callAylien res: ', res)
+    return res
+}
+
+// POST route for sentiment call
+app.post('/sentiment', function (req, res) {
+    callAylien(req, res)
 })

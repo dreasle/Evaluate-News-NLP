@@ -25,13 +25,15 @@ function handleSubmit(event) {
                 })
                 .then(res => res.json())
                 .then(function(res) {
-                    document.getElementById('results').innerHTML = `Polarity: ${res.polarity}<br> Subjectivity: ${res.subjectivity}<br>Text: ${res.text}`
+                    document.getElementById('polarity').innerHTML = `Polarity: ${res.polarity}`
+                    document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`
+                    document.getElementById('text').innerHTML = `Text: <br>${res.text}`
                 })
             } catch(error) {
                 console.log("ERROR: ", error);
             }
         }
-        getSentiment('/sentiment', {'sentmturl': inputUrl});
+        getSentiment('http://localhost:8081/sentiment', {'sentmturl': inputUrl});
     } else {
         // Log error and raise alert
         console.log("ERROR: URL invalid")

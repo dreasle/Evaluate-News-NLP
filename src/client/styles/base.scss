@@ -18,4 +18,15 @@ main {
 section {
     max-width: 800px;
     margin: 50px auto;
+    
+    #section-results {
+        h1 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .results {
+            margin-bottom: 10px;
+        }
+    }
 }
