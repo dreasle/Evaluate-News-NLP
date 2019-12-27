@@ -29,8 +29,7 @@ app.get('/', function (req, res) {
 })
 
 // Spin up express server
-var port = 8081 // This is for dev - USE ENV Vars!!
-// var port = 8080 // This is for prod - USE ENV Vars!!
+var port = 8081
 app.listen(port, function () {
     console.log(`Running on port ${port}!`)
 })
@@ -51,7 +50,6 @@ function callAylien(req, res) {
             }
             console.log(response)
     })
-    // console.log('callAylien res: ', res)
     return res
 }
 
