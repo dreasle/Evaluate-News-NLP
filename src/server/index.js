@@ -57,3 +57,5 @@ function callAylien(req, res) {
 app.post('/sentiment', function (req, res) {
     callAylien(req, res)
 })
+
+module.exports = app
